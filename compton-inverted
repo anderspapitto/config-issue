@@ -1,0 +1,3 @@
+backend = "glx"
+vsync = "opengl"
+invert-color-include = [ "class_g ~?= '(Pavucontrol|Chromium|libprs500|Conkeror|scide|Audacious|Firefox|Tomahawk|KeePassX|Quassel|Clementine)' && name !~?= 'Facebook|Youtube|YouTube - Vimperator$|Card Game|NOINVERT'" ];
