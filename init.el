@@ -16,15 +16,10 @@
  '(compilation-always-kill t)
  '(compilation-ask-about-save nil)
  '(compilation-message-face (quote default))
- '(cua-global-mark-cursor-color "#2aa198")
- '(cua-normal-cursor-color "#657b83")
- '(cua-overwrite-cursor-color "#b58900")
- '(cua-read-only-cursor-color "#859900")
  '(custom-enabled-themes (quote (wheatgrass)))
  '(custom-safe-themes
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
- '(diary-file "~/.emacs.d/diary")
  '(fci-rule-color "#eee8d5")
  '(frame-auto-hide-function (quote delete-frame))
  '(global-subword-mode t)
@@ -73,7 +68,6 @@
  '(hl-fg-colors
    (quote
     ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
- '(ido-default-buffer-method (quote selected-window))
  '(indent-tabs-mode nil)
  '(initial-scratch-message nil)
  '(js-indent-level 2)
@@ -86,7 +80,6 @@
  '(magit-use-overlays nil)
  '(menu-bar-mode nil)
  '(org-agenda-files (quote ("~/org/todo.org" "~/org/schedule.org")))
- '(org-agenda-include-diary t)
  '(org-agenda-skip-scheduled-if-done t)
  '(org-agenda-start-on-weekday nil)
  '(org-agenda-window-setup (quote current-window))
@@ -133,7 +126,6 @@ Entered on %U
     (("melpa" . "http://melpa.milkbox.net/packages/")
      ("marmalade" . "http://marmalade-repo.org/packages/")
      ("gnu" . "http://elpa.gnu.org/packages/"))))
- '(pop-up-frames nil)
  '(pop-up-windows nil)
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
@@ -147,22 +139,6 @@ Entered on %U
  '(projectile-switch-project-action (quote projectile-vc))
  '(projectile-use-git-grep t)
  '(recenter-positions (quote (bottom middle top)))
- '(safe-local-variable-values
-   (quote
-    ((eval progn
-           (make-local-variable
-            (quote haskell-compile-command))
-           (setq haskell-compile-command
-                 (concat "cd "
-                         (projectile-project-root)
-                         "client && " "nix-shell $PWD/shell.drv -A ghcjs-env --run " "'ghcjs -outputdir build -ilib -iclient " "-Wall -ferror-spans client/Main.hs'")))
-     (eval progn
-           (make-local-variable
-            (quote haskell-compile-command))
-           (setq haskell-compile-command
-                 (concat "cd "
-                         (projectile-project-root)
-                         "server && " "nix-shell $PWD/shell.drv -A ghc-env --run " "'ghc -outputdir build -dynamic -ilib -iserver " "-Wall -ferror-spans server/Main.hs'"))))))
  '(same-window-buffer-names (quote ("Calendar")))
  '(scroll-bar-mode nil)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
