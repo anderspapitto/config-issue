@@ -42,17 +42,48 @@ in
     }
   ];
 
-  config.systemd.services.test_script = {
-    description = "this is a test";
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = pkgs.writeScript "test_script" ''
-        #!${pkgs.bash}/bin/bash
-        set -xe
-        echo hi
-        env | cat
-        echo hello
-      '';
+  config.systemd.services = {
+    compton = {
+      description = "Compton: the lightweight compositing manager";
+      environment = {
+        DISPLAY = ":0";
+      };
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.compton}/bin/compton -cCG --config /home/anders/.config/nixup/compton-noninverted";
+        RestartSec = 3;
+        Restart = "always";
+      };
+    };
+
+    compton-night = {
+      description = "Compton: the lightweight compositing manager";
+      environment = {
+        DISPLAY = ":0";
+      };
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.compton}/bin/compton -cCG --config /home/anders/.config/nixup/compton-inverted";
+        Restart = "always";
+      };
+      conflicts = [ "compton.service" ];
+    };
+
+    dunst = {
+      description = "Lightweight libnotify server";
+      environment = {
+        DISPLAY = ":0";
+      };
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = pkgs.writeScript "dunst" ''
+          #!${pkgs.bash}/bin/bash
+          exec ${pkgs.dunst}/bin/dunst
+        '';
+        RestartSec = 3;
+        Restart = "always";
+      };
+      wantedBy = [ "default.target" ];
     };
   };
 }
