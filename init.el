@@ -296,17 +296,19 @@ Entered on %U
 (require 'calfw)
 (require 'calfw-org)
 (require 'org-gcal)
+(setq org-gcal-down-days 30)
+(setq org-gcal-up-days 7)
 
 (load-file "~/.emacs.d/lisp/secrets.el")
 
 (require 'nix-mode)
-(require 'nixos-options)
-(require 'helm-nixos-options)
-(global-set-key (kbd "C-c C-S-n") 'helm-nixos-options)
+;; (require 'nixos-options)
+;; (require 'helm-nixos-options)
+;; (global-set-key (kbd "C-c C-S-n") 'helm-nixos-options)
 ;; (add-to-list 'company-backends 'company-nixos-options)
 
 ;; various stuff that I just always want to have open
-(find-file-noselect "~/.emacs.d/init.el")
+(find-file-noselect "~/.config/nixup/init.el")
 (find-file-noselect "/etc/nixos/configuration/private/bad-hosts.nix")
 
 (defun spawn-shell (name command)

@@ -40,25 +40,12 @@ in
     { target = ".jackdrc";
       text = lib.readFile ./jackdrc;
     }
+    { target = ".stack/config.yaml";
+      text = lib.readFile ./stack-config.yaml;
+    };
   ];
 
   config.systemd.services = {
-    battery_check = {
-      description = "Send notification if battery is low";
-      serviceConfig = {
-        Type = "oneshot";
-        ExecStart = pkgs.writeScript "battery_check" ''
-          #!${pkgs.bash}/bin/bash
-          . <(udevadm info -q property -p /sys/class/power_supply/BAT0 |
-              grep -E 'POWER_SUPPLY_(CAPACITY|STATUS)=')
-          if [[ $POWER_SUPPLY_STATUS = Discharging && $POWER_SUPPLY_CAPACITY -lt 15 ]];
-          then notify-send -u critical "Battery is low: $POWER_SUPPLY_CAPACITY";
-          fi
-        '';
-      };
-      startAt = "*:00/5";
-    };
-
     compton = {
       description = "Compton: the lightweight compositing manager";
       environment = { DISPLAY = ":0"; };
@@ -80,18 +67,6 @@ in
         Restart = "always";
       };
       conflicts = [ "compton.service" ];
-    };
-
-    dunst = {
-      description = "Lightweight libnotify server";
-      environment = { DISPLAY = ":0"; };
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.dunst}/bin/dunst";
-        RestartSec = 3;
-        Restart = "always";
-      };
-      wantedBy = [ "default.target" ];
     };
 
     dropbox = {
