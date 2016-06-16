@@ -42,7 +42,7 @@ in
     }
     { target = ".stack/config.yaml";
       text = lib.readFile ./stack-config.yaml;
-    };
+    }
   ];
 
   config.systemd.services = {

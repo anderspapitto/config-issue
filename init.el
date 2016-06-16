@@ -262,6 +262,8 @@ Entered on %U
 (projectile-global-mode)
 
 (add-hook 'after-init-hook 'global-company-mode)
+(setq company-idle-delay 0.2)
+(setq company-minimum-prefix-length 1)
 
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
@@ -321,3 +323,12 @@ Entered on %U
 ;; (man "configuration.nix")
 
 (require 'real-auto-save)
+
+(require 'racer)
+(setq racer-cmd "racer")
+(setq racer-rust-src-path "/not-used")
+(add-hook 'rust-mode-hook 'racer-mode)
+(add-hook 'racer-mode-hook 'eldoc-mode)
+
+(shackle-mode)
+(setq shackle-rules '(("\\*input/output of.*\\*" :regexp t :ignore t)))
