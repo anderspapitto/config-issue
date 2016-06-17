@@ -332,3 +332,5 @@ Entered on %U
 
 (shackle-mode)
 (setq shackle-rules '(("\\*input/output of.*\\*" :regexp t :ignore t)))
+
+(setq x-selection-timeout 1000)
