@@ -12,7 +12,7 @@
  '(backup-directory-alist (quote ((".*" . "/tmp/"))))
  '(c-basic-offset 4)
  '(c-default-style "linux")
- '(company-global-modes (quote (not shell-mode)))
+ '(company-global-modes (quote (not shell-mode gud-mode)))
  '(compilation-always-kill t)
  '(compilation-ask-about-save nil)
  '(compilation-message-face (quote default))
