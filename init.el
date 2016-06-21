@@ -275,8 +275,6 @@ Entered on %U
 (setq web-mode-content-types-alist
       '(("jsx" . "\\.js[x]?\\'")))
 
-(load-file "~/.emacs.d/lisp/my-compile.el")
-
 (helm-mode)
 (define-key helm-map (kbd "<tab>") 'helm-next-line)
 (define-key helm-map (kbd "<backtab>") 'helm-previous-line)
@@ -300,8 +298,6 @@ Entered on %U
 (require 'org-gcal)
 (setq org-gcal-down-days 30)
 (setq org-gcal-up-days 7)
-
-(load-file "~/.emacs.d/lisp/secrets.el")
 
 (require 'nix-mode)
 ;; (require 'nixos-options)
@@ -334,3 +330,15 @@ Entered on %U
 (setq shackle-rules '(("\\*input/output of.*\\*" :regexp t :ignore t)))
 
 (setq x-selection-timeout 1000)
+
+(require 'evil)
+(evil-mode 1)
+;; (require 'colemak-evil)
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
+(setq evil-default-state 'emacs)
+(setq evil-insert-state-modes nil)
+(setq evil-motion-state-modes nil)
+
+(eval-after-load 'evil-core
+  '(evil-set-initial-state 'magit-popup-mode 'emacs))
