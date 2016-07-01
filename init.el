@@ -330,3 +330,5 @@ Entered on %U
 (setq shackle-rules '(("\\*input/output of.*\\*" :regexp t :ignore t)))
 
 (setq x-selection-timeout 1000)
+
+(setq gdb-display-io-nopopup t)
