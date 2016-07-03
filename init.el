@@ -308,6 +308,7 @@ Entered on %U
 ;; various stuff that I just always want to have open
 (find-file-noselect "~/.config/nixup/init.el")
 (find-file-noselect "/etc/nixos/configuration/private/bad-hosts.nix")
+(cfw:open-org-calendar)
 
 (defun spawn-shell (name command)
   (pop-to-buffer (get-buffer-create name))
