@@ -69,15 +69,15 @@ in
       conflicts = [ "compton.service" ];
     };
 
-#    dropbox = {
-#      description = "Dropbox";
-#      serviceConfig = {
-#        Type = "simple";
-#        ExecStart = "${pkgs.dropbox}/bin/dropbox";
-#        RestartSec = 3;
-#        Restart = "always";
-#      };
-#      wantedBy = [ "default.target" ];
-#    };
+    dropbox = {
+      description = "Dropbox";
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.dropbox}/bin/dropbox";
+        RestartSec = 3;
+        Restart = "always";
+      };
+      wantedBy = [ "default.target" ];
+    };
   };
 }

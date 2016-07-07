@@ -204,7 +204,7 @@ bar {
     }
 }
 
-new_window normal
+new_window none
 hide_edge_borders both
 force_focus_wrapping yes
 
@@ -213,3 +213,8 @@ bindsym XF86Tools exec --no-startup-id toggle-layout
 assign [title="^card-game$"] 6
 assign [class="^Steam"] 10
 assign [class="^Civ5xP$"] 10
+
+gaps inner 4
+gaps outer 4
+smart_gaps on
+
