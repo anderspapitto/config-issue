@@ -3,9 +3,6 @@
 with lib;
 
 { config.user.resourceFiles = [
-    { target = ".bashrc";
-      text = lib.readFile ./bashrc;
-    }
     { target = ".config/dunst/dunstrc";
       text = lib.readFile ./dunstrc;
     }
