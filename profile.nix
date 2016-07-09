@@ -3,9 +3,6 @@
 with lib;
 
 { config.user.resourceFiles = [
-    { target = ".config/dunst/dunstrc";
-      text = lib.readFile ./dunstrc;
-    }
     { target = ".xsession";
       text = lib.readFile ./xsession;
     }
