@@ -3,9 +3,6 @@
 with lib;
 
 { config.user.resourceFiles = [
-    { target = ".xsession";
-      text = lib.readFile ./xsession;
-    }
     { target = ".Xdefaults";
       text = lib.readFile ./xdefaults;
     }
